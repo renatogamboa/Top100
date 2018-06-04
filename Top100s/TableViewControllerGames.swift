@@ -1,8 +1,8 @@
 //
-//  TableViewController.swift
+//  TableViewControllerGames.swift
 //  Top100s
 //
-//  Created by Martin Gamboa on 5/9/18.
+//  Created by Martin Gamboa on 5/18/18.
 //  Copyright © 2018 RenatoGamboa. All rights reserved.
 //
 
@@ -12,13 +12,10 @@ import NVActivityIndicatorView
 import TableFlip
 
 
-// Show table View
 
-
-class TableViewController: UITableViewController,NVActivityIndicatorViewable {
+class TableViewControllerGames: UITableViewController,NVActivityIndicatorViewable {
     @IBOutlet weak var parseTableView: UITableView!
-
-    // Label for source of data
+    
     @IBOutlet weak var source: UILabel!
     
     var tempArr = [String]()
@@ -34,19 +31,19 @@ class TableViewController: UITableViewController,NVActivityIndicatorViewable {
     let loadingLabel = UILabel()
     
     var activityView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-
     
     
     
     
     
-     
-     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let blurredBackgroundView = BlurredBackgroundView(frame: .zero,number: 1)
-        //blurredBackgroundView.num = 1
+        let blurredBackgroundView = BlurredBackgroundView(frame: .zero,number: 2)
+        //blurredBackgroundView.num = 2
         parseTableView.backgroundView = blurredBackgroundView
         parseTableView.separatorEffect = UIVibrancyEffect(blurEffect: blurredBackgroundView.blurView.effect as! UIBlurEffect)
         
@@ -55,14 +52,14 @@ class TableViewController: UITableViewController,NVActivityIndicatorViewable {
         
         parseHTML()
         
-
+        
         
     }
- 
+    
     
     func parseHTML(){
         var varText = [String]()
-        let url = URL(string: "https://www.billboard.com/charts/hot-100")
+        let url = URL(string: "http://www.metacritic.com/browse/games/score/metascore/year/all/filtered")
         
         
         // top 100 most viewed videos
@@ -133,8 +130,8 @@ class TableViewController: UITableViewController,NVActivityIndicatorViewable {
             let doc = try SwiftSoup.parse (x)
             do {
                 //let element = try doc.select ("h2.chart-row__song").array()
-                let element = try doc.select ("div.chart-row__title").array()
-                let element2 = try doc.select ("span.chart-row__artist").array()
+                let element = try doc.select ("div.product_item.product_title").array()
+                let element2 = try doc.select ("div.product_item.product_title").array()
                 do {
                     let text = try element[0].text()
                     let text2 = try element2[0].text()
@@ -174,24 +171,23 @@ class TableViewController: UITableViewController,NVActivityIndicatorViewable {
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath)
         cell.textLabel?.text = "\(indexPath.row + 1). " + tempArr[indexPath.row]
         cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.adjustsFontSizeToFitWidth = true
-        cell.textLabel?.font = UIFont(name: "Helvetica Neue", size: 17.0)
         
         // Change colors of seperators
         /*
-        if(indexPath.row % 3 == 0){
-            parseTableView.separatorColor = UIColor.yellow
-        }
-        else if(indexPath.row % 2 == 0){
-            parseTableView.separatorColor = UIColor.red
-        }
-        else {
-            parseTableView.separatorColor = UIColor.white
-        }
- */
+         if(indexPath.row % 3 == 0){
+         parseTableView.separatorColor = UIColor.yellow
+         }
+         else if(indexPath.row % 2 == 0){
+         parseTableView.separatorColor = UIColor.red
+         }
+         else {
+         parseTableView.separatorColor = UIColor.white
+         }
+         */
         
         return (cell)
     }
@@ -206,7 +202,7 @@ class TableViewController: UITableViewController,NVActivityIndicatorViewable {
         let x = (parseTableView.frame.width / 2) - (width / 2)
         let y = (parseTableView.frame.height / 2) - (height / 2)
         loadingView.frame = CGRect(x: x, y: y, width: width, height: height)
-
+        
         
         // Sets loading text
         loadingLabel.textColor = .white
@@ -222,7 +218,7 @@ class TableViewController: UITableViewController,NVActivityIndicatorViewable {
         
         //Lets make the seperator clear until after
         parseTableView.separatorStyle = .none
-
+        
         // ADD ON LOADING VIEW
         let frame = CGRect(x: parseTableView.center.x - 100, y: parseTableView.center.y - 100, width: 200, height: 200)
         activityView = NVActivityIndicatorView(frame: frame, type: NVActivityIndicatorType(rawValue: 22), color: UIColor.white,padding: 0)
@@ -255,69 +251,16 @@ class TableViewController: UITableViewController,NVActivityIndicatorViewable {
         source.isHidden = false
         
         
-
+        
         
     }
     
     
-
     
     
-
+    
+    
 }
 
-// Diff class
-class BlurredBackgroundView: UIView {
-    var imageView: UIImageView
-    var blurView: UIVisualEffectView
-    var num = 0
-    
-    
-    override init(frame: CGRect) {
-        let blurEffect = UIBlurEffect(style: .dark)
-        blurView = UIVisualEffectView(effect: blurEffect)
-        imageView = UIImageView(image: UIImage.gorgeousImage(x: num))
-        super.init(frame: frame)
-        addSubview(imageView)
-        addSubview(blurView)
-    }
-    
-    convenience init(frame: CGRect?, number: Int?){
-        let blurEffect = UIBlurEffect(style: .dark)
-        self.init(frame: frame!)
-        self.blurView = UIVisualEffectView(effect: blurEffect)
-        self.imageView = UIImageView(image: UIImage.gorgeousImage(x: number!))
-        addSubview(imageView)
-        addSubview(blurView)
-    }
-    
-    convenience required init?(coder aDecoder: NSCoder) {
-        self.init(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        imageView.frame = bounds
-        blurView.frame = bounds
-    }
-}
 
-extension UIImage {
-    class func gorgeousImage(x: Int) -> UIImage {
-        if x == 1{
-        return UIImage(named: "gorgeousimage")!
-        } else if x == 2 {
-            return UIImage(named: "gorgeousimage2")!
-        } else if x == 3 {
-            return UIImage(named: "gorgeousimage3")!
-        } else if x == 4 {
-            return UIImage(named: "gorgeousimage4")!
-        } else if x == 5 {
-            return UIImage(named: "gorgeousimage5")!
-        } else if x == 6 {
-            return UIImage(named: "gorgeousimage6")!
-    }
-        return UIImage(named: "gorgeousimage2")!
-    }
-}
 

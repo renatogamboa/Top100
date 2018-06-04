@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D15345820AF25B200A3EB2D /* TableViewControllerGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D15345720AF25B200A3EB2D /* TableViewControllerGames.swift */; };
+		1D15345A20AF25CC00A3EB2D /* TableViewControllerMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D15345920AF25CC00A3EB2D /* TableViewControllerMovies.swift */; };
+		1D15345C20AFAF8500A3EB2D /* TableViewControllerBillionaires.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D15345B20AFAF8500A3EB2D /* TableViewControllerBillionaires.swift */; };
+		1D56EE8020AE37FB00DE8125 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D56EE7F20AE37FB00DE8125 /* PageViewController.swift */; };
 		1D66FF1120A29E8E008C4A06 /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D66FF1220A29E8E008C4A06 /* SwiftSoup.framework */; };
 		1D66FF1420A2BE49008C4A06 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D66FF1320A2BE49008C4A06 /* TableViewController.swift */; };
 		1D66FF1520A39244008C4A06 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D66FF1620A39244008C4A06 /* NVActivityIndicatorView.framework */; };
 		1D66FF1720A39EC5008C4A06 /* TableFlip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D66FF1820A39EC5008C4A06 /* TableFlip.framework */; };
 		1D9DDCC620A298CB001F23FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9DDCC520A298CB001F23FE /* AppDelegate.swift */; };
-		1D9DDCC820A298CB001F23FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9DDCC720A298CB001F23FE /* ViewController.swift */; };
 		1D9DDCCB20A298CB001F23FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9DDCC920A298CB001F23FE /* Main.storyboard */; };
 		1D9DDCCD20A298CB001F23FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D9DDCCC20A298CB001F23FE /* Assets.xcassets */; };
 		1D9DDCD020A298CB001F23FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9DDCCE20A298CB001F23FE /* LaunchScreen.storyboard */; };
@@ -20,13 +23,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D15345720AF25B200A3EB2D /* TableViewControllerGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerGames.swift; sourceTree = "<group>"; };
+		1D15345920AF25CC00A3EB2D /* TableViewControllerMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerMovies.swift; sourceTree = "<group>"; };
+		1D15345B20AFAF8500A3EB2D /* TableViewControllerBillionaires.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerBillionaires.swift; sourceTree = "<group>"; };
+		1D56EE7F20AE37FB00DE8125 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		1D66FF1220A29E8E008C4A06 /* SwiftSoup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSoup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D66FF1320A2BE49008C4A06 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		1D66FF1620A39244008C4A06 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D66FF1820A39EC5008C4A06 /* TableFlip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TableFlip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9DDCC220A298CB001F23FE /* Top100s.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Top100s.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9DDCC520A298CB001F23FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1D9DDCC720A298CB001F23FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1D9DDCCA20A298CB001F23FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D9DDCCC20A298CB001F23FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D9DDCCF20A298CB001F23FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,9 +90,12 @@
 			isa = PBXGroup;
 			children = (
 				1D9DDCC520A298CB001F23FE /* AppDelegate.swift */,
-				1D9DDCC720A298CB001F23FE /* ViewController.swift */,
 				1D66FF1320A2BE49008C4A06 /* TableViewController.swift */,
+				1D15345720AF25B200A3EB2D /* TableViewControllerGames.swift */,
+				1D15345920AF25CC00A3EB2D /* TableViewControllerMovies.swift */,
+				1D15345B20AFAF8500A3EB2D /* TableViewControllerBillionaires.swift */,
 				1D9DDCC920A298CB001F23FE /* Main.storyboard */,
+				1D56EE7F20AE37FB00DE8125 /* PageViewController.swift */,
 				1D9DDCCC20A298CB001F23FE /* Assets.xcassets */,
 				1D9DDCCE20A298CB001F23FE /* LaunchScreen.storyboard */,
 				1D9DDCD120A298CB001F23FE /* Info.plist */,
@@ -236,9 +245,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D9DDCC820A298CB001F23FE /* ViewController.swift in Sources */,
+				1D15345C20AFAF8500A3EB2D /* TableViewControllerBillionaires.swift in Sources */,
 				1D66FF1420A2BE49008C4A06 /* TableViewController.swift in Sources */,
+				1D15345820AF25B200A3EB2D /* TableViewControllerGames.swift in Sources */,
 				1D9DDCC620A298CB001F23FE /* AppDelegate.swift in Sources */,
+				1D56EE8020AE37FB00DE8125 /* PageViewController.swift in Sources */,
+				1D15345A20AF25CC00A3EB2D /* TableViewControllerMovies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
